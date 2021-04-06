@@ -13,12 +13,12 @@ import Layout from "../containers/layout";
 
 export const query = graphql`
   query IndexPageQuery {
-    site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
+    site: sanitySiteSettings(_id: { regex: "/(drafts.|)settings/" }) {
       title
       description
       keywords
     }
-    projects: allSanitySampleProject(
+    projects: allSanityBlog(
       limit: 6
       sort: { fields: [publishedAt], order: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }

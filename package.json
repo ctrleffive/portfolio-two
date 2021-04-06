@@ -1,7 +1,7 @@
 {
-  "private": true,
-  "name": "sanity-gatsby-portfolio",
-  "version": "0.0.0",
+  "private": false,
+  "name": "chandujs.dev",
+  "version": "2.6.0",
   "scripts": {
     "build": "lerna run build --parallel",
     "dev": "lerna run dev --parallel",

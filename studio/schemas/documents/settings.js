@@ -1,11 +1,10 @@
 export default {
-  name: 'siteSettings',
+  name: 'settings',
   type: 'document',
   title: 'Site Settings',
   __experimental_actions: [
-    // 'create',
+    'create',
     'update',
-    // 'delete',
     'publish'
   ],
   fields: [
@@ -29,13 +28,6 @@ export default {
       options: {
         layout: 'tags'
       }
-    },
-    {
-      name: 'author',
-      type: 'reference',
-      description: 'Publish an author and set a reference to them here.',
-      title: 'Author',
-      to: [{type: 'person'}]
     }
   ]
 }

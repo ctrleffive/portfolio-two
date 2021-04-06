@@ -1,8 +1,8 @@
 {
-  "private": true,
-  "name": "sanity-gatsby-portfolio-web",
-  "version": "1.0.3",
-  "author": "Sanity <hello@sanity.io>",
+  "private": false,
+  "name": "chandujs.dev-web",
+  "version": "2.6.0",
+  "author": "Chandu J S <chandujs@live.com>",
   "scripts": {
     "build": "gatsby build",
     "clean-cache": "gatsby clean",

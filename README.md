@@ -1,2 +1,1 @@
-# chandujs.dev
-My Website
+# My Website

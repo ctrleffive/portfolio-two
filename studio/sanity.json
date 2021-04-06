@@ -1,7 +1,7 @@
 {
   "root": true,
   "project": {
-    "name": "Portfolio with Gatsby"
+    "name": "Chandu J S"
   },
   "api": {
     "projectId": "os8ipcpy",
@@ -15,9 +15,7 @@
     "@sanity/dashboard",
     "@sanity/desk-tool",
     "dashboard-widget-structure-menu",
-    "dashboard-widget-document-list",
-    "dashboard-widget-netlify",
-    "@sanity/studio-hints"
+    "dashboard-widget-document-list"
   ],
   "parts": [
     {
@@ -31,10 +29,6 @@
     {
       "implements": "part:@sanity/dashboard/config",
       "path": "./dashboardConfig.js"
-    },
-    {
-      "implements": "part:@sanity/default-layout/studio-hints-config",
-      "path": "./studioHintsConfig.js"
     }
   ]
 }
