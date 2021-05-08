@@ -32,7 +32,7 @@ export default () =>
                 .icon(MdBrush)
                 .title('All Work')
                 .schemaType('work')
-                .child(S.documentTypeList('work').title('Work')),
+                .child(S.documentTypeList('work').title('All Work')),
               S.listItem()
                 .icon(MdList)
                 .title('Categories')
@@ -51,7 +51,7 @@ export default () =>
                 .icon(MdApps)
                 .title('All Uses')
                 .schemaType('uses')
-                .child(S.documentTypeList('uses').title('Uses')),
+                .child(S.documentTypeList('uses').title('All Uses')),
               S.listItem()
                 .icon(MdList)
                 .title('Categories')

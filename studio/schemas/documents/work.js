@@ -73,10 +73,45 @@ export default {
       type: 'markdown'
     },
     {
+      name: 'priority',
+      title: 'Priority',
+      type: 'number'
+    },
+    {
       name: 'relatedWork',
       title: 'Related Work',
       type: 'array',
       of: [{type: 'reference', to: {type: 'work'}}]
+    }
+  ],
+  orderings: [
+    {
+      title: 'Published Recently',
+      name: 'publishedAtDesc',
+      by: [
+        {field: 'publishedAt', direction: 'desc'}
+      ]
+    },
+    {
+      title: 'Published Oldest',
+      name: 'publishedAtAsc',
+      by: [
+        {field: 'publishedAt', direction: 'asc'}
+      ]
+    },
+    {
+      title: 'High Priority',
+      name: 'priorityDesc',
+      by: [
+        {field: 'priority', direction: 'desc'}
+      ]
+    },
+    {
+      title: 'Low Priority',
+      name: 'priorityAsc',
+      by: [
+        {field: 'priority', direction: 'asc'}
+      ]
     }
   ],
   preview: {
