@@ -16,18 +16,22 @@ export default {
     {
       name: 'description',
       type: 'text',
-      title: 'Description',
-      description: 'Describe your portfolio for search engines and social media.'
+      title: 'Description'
     },
     {
-      name: 'keywords',
-      type: 'array',
-      title: 'Keywords',
-      description: 'Add keywords that describes your portfolio.',
-      of: [{type: 'string'}],
-      options: {
-        layout: 'tags'
-      }
+      title: 'Meeting Enabled',
+      name: 'meetingEnabled',
+      type: 'boolean'
+    },
+    {
+      title: 'Primary Color',
+      name: 'primaryColor',
+      type: 'color'
+    },
+    {
+      title: 'Secondary Color',
+      name: 'secondaryColor',
+      type: 'color'
     }
   ]
 }

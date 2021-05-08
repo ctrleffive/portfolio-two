@@ -15,7 +15,10 @@
     "@sanity/dashboard",
     "@sanity/desk-tool",
     "dashboard-widget-structure-menu",
-    "dashboard-widget-document-list"
+    "dashboard-widget-document-list",
+    "@sanity/color-input",
+    "markdown",
+    "autocomplete-tags"
   ],
   "parts": [
     {

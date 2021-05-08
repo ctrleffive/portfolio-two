@@ -1,14 +1,36 @@
 import {format} from 'date-fns'
 
 export default {
-  name: 'blog',
-  title: 'Blog',
+  name: 'work',
+  title: 'Work',
   type: 'document',
   fields: [
+    {
+      name: 'thumbnail',
+      title: 'Thumbnail',
+      type: 'image'
+    },
     {
       name: 'title',
       title: 'Title',
       type: 'string'
+    },
+    {
+      name: 'subTitle',
+      title: 'Sub Title',
+      type: 'string'
+    },
+    {
+      name: 'category',
+      title: 'Category',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'workCategory'}}]
+    },
+    {
+      name: 'publishedAt',
+      title: 'Published at',
+      description: 'You can use this field to schedule work as well',
+      type: 'datetime'
     },
     {
       name: 'slug',
@@ -21,31 +43,40 @@ export default {
       }
     },
     {
-      name: 'publishedAt',
-      title: 'Published at',
-      description: 'You can use this field to schedule projects where you show them',
-      type: 'datetime'
+      title: 'Tags',
+      name: 'tags',
+      type: 'tags'
+    },
+    {
+      name: 'url',
+      type: 'url',
+      title: 'Work URL'
     },
     {
       name: 'startedAt',
-      title: 'Started at',
+      title: 'Started At',
       type: 'datetime'
     },
     {
       name: 'endedAt',
-      title: 'Ended at',
+      title: 'Ended At',
       type: 'datetime'
     },
     {
       name: 'mainImage',
-      title: 'Main image',
+      title: 'Main Image',
       type: 'figure'
     },
     {
-      name: 'relatedProjects',
-      title: 'Related projects',
+      name: 'details',
+      title: 'Details',
+      type: 'markdown'
+    },
+    {
+      name: 'relatedWork',
+      title: 'Related Work',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'blog'}}]
+      of: [{type: 'reference', to: {type: 'work'}}]
     }
   ],
   preview: {
@@ -53,7 +84,7 @@ export default {
       title: 'title',
       publishedAt: 'publishedAt',
       slug: 'slug',
-      media: 'mainImage'
+      media: 'thumbnail'
     },
     prepare ({title = 'No title', publishedAt, slug = {}, media}) {
       const dateSegment = format(publishedAt, 'YYYY/MM')

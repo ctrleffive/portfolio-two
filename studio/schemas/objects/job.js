@@ -22,12 +22,12 @@ export default {
       type: 'string'
     },
     {
-      title: 'Started',
+      title: 'Started At',
       name: 'started',
       type: 'string'
     },
     {
-      title: 'Ended',
+      title: 'Ended At',
       name: 'ended',
       type: 'string'
     },

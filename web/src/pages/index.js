@@ -18,7 +18,7 @@ export const query = graphql`
       description
       keywords
     }
-    projects: allSanityBlog(
+    projects: allSanityWork(
       limit: 6
       sort: { fields: [publishedAt], order: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }

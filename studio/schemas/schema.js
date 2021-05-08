@@ -5,9 +5,12 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // Document types
-import blog from './documents/blog'
+import uses from './documents/uses'
+import work from './documents/work'
 import resume from './documents/resume'
 import settings from './documents/settings'
+import workCategory from './documents/workCategory'
+import usesCategory from './documents/usesCategory'
 
 // Object types
 import language from './objects/language'
@@ -32,8 +35,11 @@ export default createSchema({
     figure,
     // The following are document types which will appear
     // in the studio.
-    blog,
+    uses,
+    work,
     resume,
-    settings
+    settings,
+    workCategory,
+    usesCategory
   ])
 })

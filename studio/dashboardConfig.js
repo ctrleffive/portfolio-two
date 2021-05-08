@@ -3,13 +3,8 @@ export default {
     {name: 'structure-menu'},
     {
       name: 'document-list',
-      options: {title: 'Blog', order: '_createdAt desc', types: ['blog']},
-      layout: {width: 'medium'}
-    },
-    {
-      name: 'document-list',
       options: {title: 'Work', order: '_createdAt desc', types: ['work']},
-      layout: {width: 'small'}
+      layout: {width: 'large'}
     },
     {
       name: 'project-info',
@@ -21,8 +16,13 @@ export default {
             category: 'Code'
           },
           {
-            title: 'Frontend',
+            title: 'Website',
             value: 'https://chandujs.dev',
+            category: 'Website'
+          },
+          {
+            title: 'Blog',
+            value: 'https://dev.to',
             category: 'Website'
           }
         ]

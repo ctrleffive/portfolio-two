@@ -1,35 +1,62 @@
 import S from '@sanity/desk-tool/structure-builder'
-import {MdBookmark, MdSettings} from 'react-icons/md'
-
-const hiddenDocTypes = listItem =>
-  !['blog', 'settings', 'resume'].includes(listItem.getId())
+import {MdApps, MdBookmark, MdBrush, MdList, MdSettings} from 'react-icons/md'
 
 export default () =>
   S.list()
     .title('Content')
     .items([
       S.listItem()
+        .icon(MdSettings)
         .title('Settings')
         .child(
           S.document()
             .schemaType('settings')
             .documentId('settings')
-        )
-        .icon(MdSettings),
+        ),
       S.listItem()
+        .icon(MdBookmark)
         .title('Résumé')
         .child(
           S.document()
             .schemaType('resume')
             .documentId('resume')
-        )
-        .icon(MdBookmark),
+        ),
       S.listItem()
-        .title('Blog')
-        .schemaType('blog')
-        .child(S.documentTypeList('blog').title('Blog')),
-      // This returns an array of all the document types
-      // defined in schema.js. We filter out those that we have
-      // defined the structure above
-      ...S.documentTypeListItems().filter(hiddenDocTypes)
+        .icon(MdBrush)
+        .title('Work')
+        .child(
+          S.list()
+            .title('Work')
+            .items([
+              S.listItem()
+                .icon(MdBrush)
+                .title('All Work')
+                .schemaType('work')
+                .child(S.documentTypeList('work').title('Work')),
+              S.listItem()
+                .icon(MdList)
+                .title('Categories')
+                .schemaType('workCategory')
+                .child(S.documentTypeList('workCategory').title('Work Category'))
+            ])
+        ),
+      S.listItem()
+        .icon(MdApps)
+        .title('Uses')
+        .child(
+          S.list()
+            .title('Uses')
+            .items([
+              S.listItem()
+                .icon(MdApps)
+                .title('All Uses')
+                .schemaType('uses')
+                .child(S.documentTypeList('uses').title('Uses')),
+              S.listItem()
+                .icon(MdList)
+                .title('Categories')
+                .schemaType('usesCategory')
+                .child(S.documentTypeList('usesCategory').title('Uses Category'))
+            ])
+        )
     ])
