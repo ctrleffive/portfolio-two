@@ -75,6 +75,7 @@ export default {
     {
       name: 'priority',
       title: 'Priority',
+      description: 'Higher value has higher priority',
       type: 'number'
     },
     {

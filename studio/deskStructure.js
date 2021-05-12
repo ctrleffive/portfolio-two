@@ -43,20 +43,6 @@ export default () =>
       S.listItem()
         .icon(MdApps)
         .title('Uses')
-        .child(
-          S.list()
-            .title('Uses')
-            .items([
-              S.listItem()
-                .icon(MdApps)
-                .title('All Uses')
-                .schemaType('uses')
-                .child(S.documentTypeList('uses').title('All Uses')),
-              S.listItem()
-                .icon(MdList)
-                .title('Categories')
-                .schemaType('usesCategory')
-                .child(S.documentTypeList('usesCategory').title('Uses Category'))
-            ])
-        )
+        .schemaType('uses')
+        .child(S.documentTypeList('uses').title('Uses'))
     ])

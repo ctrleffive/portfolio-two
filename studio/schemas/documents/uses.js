@@ -4,30 +4,37 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'category',
-      title: 'Category',
-      type: 'reference',
-      to: {type: 'usesCategory'}
-    },
-    {
-      name: 'emoji',
-      title: 'Emoji',
+      name: 'categoryName',
+      title: 'Category Name',
       type: 'string'
     },
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string'
+      name: 'items',
+      title: 'Items',
+      type: 'array',
+      of: [{type: 'usesItem'}]
     },
     {
-      name: 'details',
-      title: 'Details',
-      type: 'text'
+      name: 'priority',
+      title: 'Priority',
+      description: 'Higher value has higher priority',
+      type: 'number'
+    }
+  ],
+  orderings: [
+    {
+      title: 'High Priority',
+      name: 'priorityDesc',
+      by: [
+        {field: 'priority', direction: 'desc'}
+      ]
     },
     {
-      name: 'url',
-      type: 'url',
-      title: 'URL'
+      title: 'Low Priority',
+      name: 'priorityAsc',
+      by: [
+        {field: 'priority', direction: 'asc'}
+      ]
     }
   ]
 }

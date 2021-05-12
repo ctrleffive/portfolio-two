@@ -10,9 +10,9 @@ import work from './documents/work'
 import resume from './documents/resume'
 import settings from './documents/settings'
 import workCategory from './documents/workCategory'
-import usesCategory from './documents/usesCategory'
 
 // Object types
+import usesItem from './documents/usesItem'
 import language from './objects/language'
 import education from './objects/education'
 import socialLink from './objects/socialLink'
@@ -33,13 +33,13 @@ export default createSchema({
     education,
     socialLink,
     figure,
+    usesItem,
     // The following are document types which will appear
     // in the studio.
     uses,
     work,
     resume,
     settings,
-    workCategory,
-    usesCategory
+    workCategory
   ])
 })
