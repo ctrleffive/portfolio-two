@@ -19,6 +19,11 @@ export default {
       title: 'Description'
     },
     {
+      name: 'email',
+      type: 'string',
+      title: 'Email'
+    },
+    {
       title: 'Meeting Enabled',
       name: 'meetingEnabled',
       type: 'boolean'
