@@ -29,6 +29,16 @@ export default {
       type: 'boolean'
     },
     {
+      name: 'meetingLink',
+      type: 'url',
+      title: 'Meeting Link'
+    },
+    {
+      name: 'meetingButtonLabel',
+      type: 'string',
+      title: 'Meeting Button Label'
+    },
+    {
       title: 'Primary Color',
       name: 'primaryColor',
       type: 'color'

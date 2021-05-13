@@ -43,7 +43,7 @@ export default class IndexPage extends Component {
         }
       }
     `
-
+// TODO: Feed data from query
     return (
       <Wrap
         pageBg={<PageBg />}
