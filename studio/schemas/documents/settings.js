@@ -37,16 +37,6 @@ export default {
       name: 'meetingButtonLabel',
       type: 'string',
       title: 'Meeting Button Label'
-    },
-    {
-      title: 'Primary Color',
-      name: 'primaryColor',
-      type: 'color'
-    },
-    {
-      title: 'Secondary Color',
-      name: 'secondaryColor',
-      type: 'color'
     }
   ]
 }

@@ -6,12 +6,10 @@ import { StaticQuery, graphql } from "gatsby";
 import { Global, css, jsx } from "@emotion/react";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-import { ColorsAdvanced } from "../styles/main";
+import { ColorsAdvanced, Fonts } from "../styles/main";
 import { nameSplitter } from "../utils/common";
 
 import CoverImg from "../../static/images/cover.png";
-
-import * as variables from "../styles/variables.json";
 
 const InfoSection = ({ title, children }) => (
   <div
@@ -103,7 +101,7 @@ export default class ResumePage extends Component {
           styles={css`
             body,
             html {
-              font-family: ${variables.default.font}, sans-serif;
+              font-family: ${Fonts.body}, sans-serif;
               font-size: 16px;
               background-color: #dcdcdc;
             }

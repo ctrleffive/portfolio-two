@@ -1,11 +1,13 @@
-import { css } from '@emotion/react'
-import { darken, lighten } from 'polished'
-import * as variables from './variables.json'
+import { css } from "@emotion/react";
+import { darken, lighten } from "polished";
 
-export const Colors = variables.default.colors
+export const Colors = {
+  brand: "#5d49d3",
+  accent: "#FFEB3B",
+};
 
-const BrandDarken = darken(0.3, Colors.brand)
-const MainLightsOn = `#ececec`
+const BrandDarken = darken(0.3, Colors.brand);
+const MainLightsOn = `#ececec`;
 
 export const ColorsAdvanced = {
   main: BrandDarken,
@@ -13,10 +15,10 @@ export const ColorsAdvanced = {
   secondary: lighten(0.6, BrandDarken),
   secondaryLightsOn: darken(0.7, MainLightsOn),
   accentLightsOn: Colors.brand,
-}
+};
 export const Fonts = {
-  body: variables.default.font,
-}
+  body: "Raleway",
+};
 
 export const GlobalStyles = css`
   ::-webkit-scrollbar {
@@ -161,4 +163,4 @@ export const GlobalStyles = css`
     padding-left: 0.2rem;
     list-style: none;
   }
-`
+`;
