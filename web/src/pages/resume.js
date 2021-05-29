@@ -17,17 +17,19 @@ const InfoSection = ({ title, children }) => (
       padding: 3rem;
     `}
   >
-    <div
-      css={css`
-        text-transform: uppercase;
-        letter-spacing: 0.3rem;
-        font-size: 1.2rem;
-        opacity: 0.6;
-        margin-bottom: 2.5rem;
-      `}
-    >
-      {title}
-    </div>
+    {title && (
+      <div
+        css={css`
+          text-transform: uppercase;
+          letter-spacing: 0.3rem;
+          font-size: 1.2rem;
+          opacity: 0.6;
+          margin-bottom: 2.5rem;
+        `}
+      >
+        {title}
+      </div>
+    )}
     {children}
   </div>
 );
@@ -95,6 +97,7 @@ const ListItem = ({ icon, title, skill, children }) =>
 
 export default class ResumePage extends Component {
   render = () => {
+    const isFromDownload = location.search === "?5713b02f1a08470383db";
     return (
       <div>
         <Global
@@ -142,6 +145,7 @@ export default class ResumePage extends Component {
                   instituteName
                 }
                 email
+                phone
                 jobTitle
                 languages {
                   level
@@ -237,6 +241,7 @@ export default class ResumePage extends Component {
                         <ListItem title="Location">{sanityResume.location}</ListItem>
                         <ListItem title="Email">{sanityResume.email}</ListItem>
                         <ListItem title="Website">{sanityResume.website}</ListItem>
+                        {isFromDownload && <ListItem title="Phone">{sanityResume.phone}</ListItem>}
                       </InfoSection>
                       <InfoSection title="Social">
                         {socialLinks.map((item) => {

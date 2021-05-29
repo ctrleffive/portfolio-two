@@ -11,6 +11,11 @@ export default {
       type: 'image'
     },
     {
+      title: 'Color',
+      name: 'color',
+      type: 'color'
+    },
+    {
       name: 'title',
       title: 'Title',
       type: 'string'

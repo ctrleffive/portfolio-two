@@ -47,6 +47,11 @@ export default {
       title: 'Email'
     },
     {
+      name: 'phone',
+      type: 'string',
+      title: 'Phone'
+    },
+    {
       name: 'socialLinks',
       title: 'Social Links',
       type: 'array',
