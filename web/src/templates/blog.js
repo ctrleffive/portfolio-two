@@ -44,8 +44,8 @@ const BlogSinglePage = ({
           <div className="h1 font-weight-bold text-body">{data.title}</div>
           <div className="mb-3">Published On: {data.readable_publish_date}</div>
           <div className="tags">
-            {data.tags.map((tag) => (
-              <span className="badge badge-pill badge-brand mb-2 mr-2 py-1">#{tag}</span>
+            {data.tags.map((tag, index) => (
+              <span key={index} className="badge badge-pill badge-brand mb-2 mr-2 py-1">#{tag}</span>
             ))}
           </div>
         </div>

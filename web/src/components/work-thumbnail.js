@@ -1,10 +1,10 @@
 /** @jsx jsx */
 
-import { css, jsx } from "@emotion/react"
-import { Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
-import { Component } from "react"
-import { Colors } from "../styles/main"
+import { css, jsx } from "@emotion/react";
+import { Link } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { Component } from "react";
+import { Colors } from "../styles/main";
 
 export default class WorkThumbnail extends Component {
   state = {
@@ -90,9 +90,7 @@ export default class WorkThumbnail extends Component {
             }
           `}
         >
-          <GatsbyImage
-            image={data.thumbnail.asset.localFile.childImageSharp.gatsbyImageData}
-          />
+          <GatsbyImage image={data.thumbnail.asset.localFile.childImageSharp.gatsbyImageData} alt={data.title} />
           <div
             css={css`
               position: absolute;
@@ -124,8 +122,9 @@ export default class WorkThumbnail extends Component {
               {data.title}
             </div>
             <div>
-              {data.category.map((category) => (
+              {data.category.map((category, index) => (
                 <span
+                  key={index}
                   css={css`
                     margin-right: 1.5rem;
                   `}

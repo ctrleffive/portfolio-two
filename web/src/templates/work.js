@@ -92,8 +92,11 @@ const WorkSinglePage = ({ data: { sanityWork: data, site } }) => {
             {data.subTitle}
           </div>
           <div className="tags">
-            {data.tags.map(({ value }) => (
-              <span className="badge badge-pill badge-brand mb-2 mr-2 ng-star-inserted py-1">
+            {data.tags.map(({ value }, index) => (
+              <span
+                key={index}
+                className="badge badge-pill badge-brand mb-2 mr-2 ng-star-inserted py-1"
+              >
                 #{value}
               </span>
             ))}
@@ -104,6 +107,7 @@ const WorkSinglePage = ({ data: { sanityWork: data, site } }) => {
             <GatsbyImage
               className="w-100"
               objectFit="cover"
+              alt={data.title}
               image={coverImage.localFile.childImageSharp.gatsbyImageData}
             />
           ) : (

@@ -81,8 +81,8 @@ export default class WorkPage extends Component {
                     }
                   `}
                 >
-                  {workItems.map((item) => (
-                    <WorkThumbnail data={item} />
+                  {workItems.map((item, index) => (
+                    <WorkThumbnail key={index} data={item} />
                   ))}
                 </div>
               </div>

@@ -111,7 +111,7 @@ export default class ResumePage extends Component {
             p {
               line-height: 1.7;
               text-align: justify;
-              &:first-child {
+              &:first-of-type {
                 margin-top: -0.1rem;
               }
               &:last-child {
@@ -244,11 +244,12 @@ export default class ResumePage extends Component {
                         {isFromDownload && <ListItem title="Phone">{sanityResume.phone}</ListItem>}
                       </InfoSection>
                       <InfoSection title="Social">
-                        {socialLinks.map((item) => {
+                        {socialLinks.map((item, index) => {
                           const usernameSplits = item.url.split("/");
                           const username = usernameSplits[usernameSplits.length - 1];
                           return (
                             <ListItem
+                              key={index}
                               icon={item.icon.asset.localFile.childImageSharp.gatsbyImageData}
                             >
                               {`${item.name} @${username}`}
@@ -263,34 +264,39 @@ export default class ResumePage extends Component {
                             display: inline-block;
                           `}
                         >
-                          {skills.map(({ value }) => (
-                            <ListItem skill>{value}</ListItem>
+                          {skills.map(({ value }, index) => (
+                            <ListItem key={index} skill>
+                              {value}
+                            </ListItem>
                           ))}
                         </div>
                       </InfoSection>
                       <InfoSection title="Education">
-                        {education.map((item) => (
-                          <ListItem title={item.course}>
+                        {education.map((item, index) => (
+                          <ListItem key={index} title={item.course}>
                             <div>{item.duration}</div>
                             <div>{item.instituteName}</div>
                           </ListItem>
                         ))}
                       </InfoSection>
                       <InfoSection title="Languages">
-                        {languages.map((item) => (
-                          <ListItem title={item.name}>{item.level}</ListItem>
+                        {languages.map((item, index) => (
+                          <ListItem key={index} title={item.name}>
+                            {item.level}
+                          </ListItem>
                         ))}
                       </InfoSection>
                     </div>
                     <div className="col-md-8">
                       <InfoSection title="Professional Profile">
-                        {(sanityResume.aboutMe || "").split("\n\n").map((item) => (
-                          <p>{item}</p>
+                        {(sanityResume.aboutMe || "").split("\n\n").map((item, index) => (
+                          <p key={index}>{item}</p>
                         ))}
                       </InfoSection>
                       <InfoSection title="Employment History">
-                        {job.map((item) => (
+                        {job.map((item, index) => (
                           <div
+                            key={index}
                             css={css`
                               margin-bottom: 3rem;
                               &:last-child {
@@ -326,8 +332,8 @@ export default class ResumePage extends Component {
                               {item.location}
                             </div>
                             <div>
-                              {(item.details || "").split("\n\n").map((desc) => (
-                                <p>{desc}</p>
+                              {(item.details || "").split("\n\n").map((desc, index) => (
+                                <p key={index}>{desc}</p>
                               ))}
                             </div>
                             {item.technologies.length ? (
@@ -353,8 +359,8 @@ export default class ResumePage extends Component {
                                     }
                                   `}
                                 >
-                                  {item.technologies.map((resp) => (
-                                    <li>{resp}</li>
+                                  {item.technologies.map((resp, index) => (
+                                    <li key={index}>{resp}</li>
                                   ))}
                                 </ul>
                               </div>
@@ -384,8 +390,8 @@ export default class ResumePage extends Component {
                                     }
                                   `}
                                 >
-                                  {item.responsibilities.map((resp) => (
-                                    <li>{resp}</li>
+                                  {item.responsibilities.map((resp, index) => (
+                                    <li key={index}>{resp}</li>
                                   ))}
                                 </ul>
                               </div>

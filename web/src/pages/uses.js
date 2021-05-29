@@ -75,13 +75,13 @@ export default class UsesPage extends Component {
             `}
             render={({ allSanityUses }) => (
               <div className="row">
-                {allSanityUses.edges.map(({ node: { items, categoryName, description } }) => (
-                  <div className="col-lg-4 col-md-6 mb-4 mt-1">
+                {allSanityUses.edges.map(({ node: { items, categoryName, description } }, index) => (
+                  <div key={index} className="col-lg-4 col-md-6 mb-4 mt-1">
                     <div className="h3 mb-2">{categoryName}</div>
                     <p className={description ? `mb-4` : `pb-0`}>{description}</p>
                     <ul className="no-bullets">
-                      {items.map((item) => (
-                        <li>
+                      {items.map((item, index) => (
+                        <li key={index}>
                           {item.emoji ? (
                             <span
                               role="img"

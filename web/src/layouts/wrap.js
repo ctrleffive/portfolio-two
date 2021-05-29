@@ -340,9 +340,10 @@ export default class Wrap extends Component {
                     }
                   `}
                 >
-                  {sanityResume.socialLinks.map((item) => {
+                  {sanityResume.socialLinks.map((item, index) => {
                     return (
                       <OutboundLink
+                        key={index}
                         eventLabel={`Social Media (${item.name})`}
                         href={item.url}
                         target="_blank"

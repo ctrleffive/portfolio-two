@@ -92,7 +92,7 @@ const AboutPage = ({ data: { sanityResume } }) => {
             `}
           >
             {sanityResume.skills.map(({ value }, index) => (
-              <span>
+              <span key={index}>
                 <span className="high">{value}</span>
                 {index + 1 === sanityResume.skills.length ? " ..." : ", "}
               </span>

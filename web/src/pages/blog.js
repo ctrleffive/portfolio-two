@@ -1,12 +1,12 @@
 /** @jsx jsx */
 
-import { css, jsx } from '@emotion/react'
-import Wrap from '../layouts/wrap'
-import { Component } from 'react'
+import { css, jsx } from "@emotion/react";
+import Wrap from "../layouts/wrap";
+import { Component } from "react";
 
-import PageBg from '../assets/images/bgs/blog.svg'
+import PageBg from "../assets/images/bgs/blog.svg";
 
-import { StaticQuery, Link, graphql } from 'gatsby'
+import { StaticQuery, Link, graphql } from "gatsby";
 
 export default class BlogPage extends Component {
   render = () => {
@@ -29,13 +29,14 @@ export default class BlogPage extends Component {
           }
         `}
         render={({ allDevArticles }) => {
-          const articles = allDevArticles.edges.map((item) => item.node.article)
+          const articles = allDevArticles.edges.map((item) => item.node.article);
           return (
             <Wrap
               lightsOn
               pageBg={<PageBg />}
               title="Blog - Chandu J S"
-              description="I write development tips & articles often.">
+              description="I write development tips & articles often."
+            >
               <div className="content-wrap">
                 <div className="h1 font-weight-bold mb-3">
                   My <span className="high">Blog</span>
@@ -46,9 +47,9 @@ export default class BlogPage extends Component {
                   className="h5 mb-4 pb-4"
                   css={css`
                     line-height: 1.6;
-                  `}>
-                  I like writing but as you can tell, I suck at posting
-                  consistently.
+                  `}
+                >
+                  I like writing but as you can tell, I suck at posting consistently.
                   <br />
                   But since you're here now, I'll try to post more in here.
                 </div>
@@ -60,9 +61,11 @@ export default class BlogPage extends Component {
                     @media screen and (max-width: 766px) {
                       margin: 0 -2rem;
                     }
-                  `}>
-                  {articles.map((item) => (
+                  `}
+                >
+                  {articles.map((item, index) => (
                     <Link
+                      key={index}
                       to={`/blog/${item.slug}`}
                       css={css`
                         padding: 2rem;
@@ -77,25 +80,28 @@ export default class BlogPage extends Component {
                           display: block;
                         }
                       `}
-                      className="mb-4 bg-white overflow-hidden">
+                      className="mb-4 bg-white overflow-hidden"
+                    >
                       <div
                         css={css`
                           line-height: 2rem;
                         `}
-                        className="item-title font-weight-bold brand-light h4">
+                        className="item-title font-weight-bold brand-light h4"
+                      >
                         {item.title}
                       </div>
                       <div className="mb-3 text-muted item-date">
-                        Published On:{' '}
-                        <strong>{item.readable_publish_date}</strong>
+                        Published On: <strong>{item.readable_publish_date}</strong>
                       </div>
                       <div className="item-tags text-lowercase mt-2">
-                        {item.tags.map((tag) => (
+                        {item.tags.map((tag, index) => (
                           <span
+                            key={index}
                             css={css`
                               display: inline-block;
                             `}
-                            className="badge badge-pill badge-brand mr-3">
+                            className="badge badge-pill badge-brand mr-3"
+                          >
                             #{tag}
                           </span>
                         ))}
@@ -105,9 +111,9 @@ export default class BlogPage extends Component {
                 </div>
               </div>
             </Wrap>
-          )
+          );
         }}
       />
-    )
-  }
+    );
+  };
 }
