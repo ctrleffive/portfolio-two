@@ -25,12 +25,15 @@ export default class WorkPage extends Component {
                     title
                     id
                   }
+                  color {
+                    hex
+                  }
                   subTitle
                   thumbnail {
                     asset {
                       localFile {
                         childImageSharp {
-                          gatsbyImageData(layout: FIXED, aspectRatio: 1)
+                          gatsbyImageData(layout: FIXED, height: 300)
                         }
                       }
                     }

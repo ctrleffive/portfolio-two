@@ -6,6 +6,7 @@ import Wrap from "../layouts/wrap";
 import { Colors } from "../styles/main";
 import { graphql } from "gatsby";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
+import rehypeRaw from "rehype-raw";
 
 import PageBg from "../assets/images/bgs/work.svg";
 import { nameSplitter } from "../utils/common";
@@ -144,6 +145,7 @@ const WorkSinglePage = ({ data: { sanityWork: data, site } }) => {
             `}
           >
             <ReactMarkdown
+              rehypePlugins={[rehypeRaw]}
               components={{
                 img: ({ node, src, ...props }) => {
                   return (
@@ -156,7 +158,7 @@ const WorkSinglePage = ({ data: { sanityWork: data, site } }) => {
             </ReactMarkdown>
           </div>
         </div>
-        {data.url ? (
+        {data.url && (
           <OutboundLink
             eventLabel={`Project Visit (${data.title})`}
             href={data.url}
@@ -181,8 +183,6 @@ const WorkSinglePage = ({ data: { sanityWork: data, site } }) => {
           >
             GoTo Project
           </OutboundLink>
-        ) : (
-          ""
         )}
       </div>
     </Wrap>

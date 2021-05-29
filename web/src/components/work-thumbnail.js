@@ -1,9 +1,10 @@
 /** @jsx jsx */
 
-import { css, jsx } from "@emotion/react";
-import { StaticQuery, Link, graphql } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
-import { Component } from "react";
+import { css, jsx } from "@emotion/react"
+import { Link } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { Component } from "react"
+import { Colors } from "../styles/main"
 
 export default class WorkThumbnail extends Component {
   state = {
@@ -66,7 +67,7 @@ export default class WorkThumbnail extends Component {
               left: 0;
               right: 0;
               bottom: 0;
-              background-color: ${data.thumbnail?.colors?.lightVibrant};
+              background-color: ${data.color?.hex ?? Colors.brand};
               z-index: 1;
               transition-duration: 0.2s;
               opacity: 0;
@@ -91,13 +92,12 @@ export default class WorkThumbnail extends Component {
         >
           <GatsbyImage
             image={data.thumbnail.asset.localFile.childImageSharp.gatsbyImageData}
-            objectFit="cover"
           />
           <div
             css={css`
               position: absolute;
               z-index: 1;
-              mix-blend-mode: difference;
+              mix-blend-mode: multiply;
               bottom: -3rem;
               right: 0;
               left: 0;
@@ -106,7 +106,6 @@ export default class WorkThumbnail extends Component {
               padding-left: 2rem;
               padding-bottom: 2.2rem;
               transition-duration: 0.2s;
-              color: ${data.thumbnail?.colors?.muted};
 
               @media screen and (max-width: 766px) {
                 opacity: 1;
@@ -118,7 +117,7 @@ export default class WorkThumbnail extends Component {
             <div
               css={css`
                 font-weight: bold;
-                font-size: 2rem;
+                font-size: 1.95rem;
                 margin-bottom: 0rem;
               `}
             >
