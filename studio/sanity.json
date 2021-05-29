@@ -18,8 +18,7 @@
     "dashboard-widget-document-list",
     "@sanity/color-input",
     "markdown",
-    "autocomplete-tags",
-    "dark-theme-blue"
+    "autocomplete-tags"
   ],
   "parts": [
     {
