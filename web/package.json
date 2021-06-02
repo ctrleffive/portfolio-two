@@ -9,7 +9,7 @@
     "clean-cache": "gatsby clean",
     "dev": "gatsby develop",
     "format": "prettier-eslint --write \"**/*.js\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
-    "deploy": "yarn build && gh-pages -d public"
+    "deploy": "yarn clean-cache; yarn build; gh-pages -d public"
   },
   "dependencies": {
     "@emotion/react": "^11.4.0",
@@ -57,9 +57,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ctrleffive/ctrleffive.github.io"
+    "url": "https://github.com/ctrleffive/ctrleffive"
   },
   "bugs": {
-    "url": "https://github.com/ctrleffive/ctrleffive.github.io/issues"
+    "url": "https://github.com/ctrleffive/ctrleffive/issues"
   }
 }
