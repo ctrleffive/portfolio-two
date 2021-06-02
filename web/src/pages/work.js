@@ -14,7 +14,7 @@ export default class WorkPage extends Component {
       <StaticQuery
         query={graphql`
           {
-            allSanityWork(sort: { order: ASC, fields: priority }) {
+            allSanityWork(sort: { order: DESC, fields: publishedAt }) {
               edges {
                 node {
                   slug {
