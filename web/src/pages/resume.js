@@ -97,7 +97,8 @@ const ListItem = ({ icon, title, skill, children }) =>
 
 export default class ResumePage extends Component {
   render = () => {
-    const isFromDownload = location.search === "?5713b02f1a08470383db";
+    const isFromDownload = false;
+    // const isFromDownload = location.search === "?5713b02f1a08470383db";
     return (
       <div>
         <Global

@@ -64,7 +64,7 @@ export default class Wrap extends Component {
             title: this.props.title || sanitySettings.title,
             description: this.props.description || ``,
           };
-          const cover = this.props.cover || `${location.origin}/images/cover.png`;
+          const cover = this.props.cover || `${siteMetadata.siteUrl}/images/cover.png`;
           return (
             <div
               className={this.props.lightsOn ? "lights-on" : ""}

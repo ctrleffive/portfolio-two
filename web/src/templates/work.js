@@ -59,8 +59,8 @@ export const query = graphql`
 const WorkSinglePage = ({ data: { sanityWork: data, site } }) => {
   const splittedTitle = nameSplitter(data.title);
   const coverImage = {
-    localFile: data.mainImage.asset.localFile,
-    url: data.mainImage.asset.url,
+    localFile: data.mainImage?.asset?.localFile,
+    url: data.mainImage?.asset?.url,
   };
 
   return (
