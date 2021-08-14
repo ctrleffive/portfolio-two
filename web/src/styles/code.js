@@ -1,13 +1,37 @@
-import { css } from '@emotion/react'
-import { Colors } from './main.js'
+import { css } from "@emotion/react";
+import { Colors } from "./main.js";
 
-export default css`
+export const customStyles = css`
   .table-wrapper-paragraph {
     margin-bottom: 1.5rem;
   }
 
-  .ltag__link {
+  .ltag__link,
+  .highlight__panel,
+  .ltag-github-body,
+  .gh-btn-container {
     display: none;
+  }
+
+  .readme-overview h2 {
+    display: flex;
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+  .readme-overview img {
+    width: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0;
+  }
+  .readme-overview {
+    position: relative;
+    padding-left: 4rem;
+    margin-top: 1rem;
+  }
+  .readme-overview h3 {
+    margin-bottom: 0;
   }
 
   ul {
@@ -24,8 +48,8 @@ export default css`
     border-radius: 3px;
     max-width: 100%;
   }
-  code[class*='highlight'],
-  pre[class*='highlight'] {
+  code[class*="highlight"],
+  pre[class*="highlight"] {
     text-align: left;
     white-space: pre;
     word-spacing: normal;
@@ -43,7 +67,7 @@ export default css`
     hyphens: none;
   }
 
-  pre[class*='highlight'] {
+  pre[class*="highlight"] {
     overflow: auto;
     position: relative;
     display: block;
@@ -55,6 +79,9 @@ export default css`
     color: #f8f8f2;
     border-radius: 5px;
   }
+`;
+
+export const codeTheme = css`
   .highlight .hll {
     background-color: #49483e;
   }
@@ -262,4 +289,4 @@ export default css`
   .highlight .il {
     color: #ae81ff;
   } /* Literal.Number.Integer.Long */
-`
+`;

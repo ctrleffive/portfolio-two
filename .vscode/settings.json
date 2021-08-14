@@ -5,5 +5,16 @@
     "ctrleffive",
     "rehype"
   ],
-  "files.autoSave": "off"
+  "files.autoSave": "off",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#332492",
+    "activityBar.activeBorder": "#b33f2c",
+    "activityBar.background": "#332492",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#b33f2c",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "tab.activeBorder": "#332492"
+  },
+  "peacock.color": "#251a69"
 }

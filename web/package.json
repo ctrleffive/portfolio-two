@@ -9,7 +9,7 @@
     "clean-cache": "gatsby clean",
     "dev": "gatsby develop",
     "format": "prettier-eslint --write \"**/*.js\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
-    "deploy": "yarn clean-cache; yarn build; gh-pages -d public"
+    "deploy": "npm run build; gh-pages -d public"
   },
   "dependencies": {
     "@emotion/react": "^11.4.0",

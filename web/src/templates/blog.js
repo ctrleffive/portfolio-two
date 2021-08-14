@@ -7,7 +7,7 @@ import Wrap from "../layouts/wrap";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 import { StaticImage } from "gatsby-plugin-image";
 
-import codeStyles from "../styles/code.js";
+import { customStyles, codeTheme } from "../styles/code.js";
 
 export const query = graphql`
   query ($slug: String!) {
@@ -45,7 +45,9 @@ const BlogSinglePage = ({
           <div className="mb-3">Published On: {data.readable_publish_date}</div>
           <div className="tags">
             {data.tags.map((tag, index) => (
-              <span key={index} className="badge badge-pill badge-brand mb-2 mr-2 py-1">#{tag}</span>
+              <span key={index} className="badge badge-pill badge-brand mb-2 mr-2 py-1">
+                #{tag}
+              </span>
             ))}
           </div>
         </div>
@@ -61,7 +63,12 @@ const BlogSinglePage = ({
           ) : (
             ""
           )}
-          <div css={codeStyles} dangerouslySetInnerHTML={{ __html: data.body_html }} />
+          <div
+            css={css`
+              ${codeTheme} ${customStyles}
+            `}
+            dangerouslySetInnerHTML={{ __html: data.body_html }}
+          />
         </div>
         <OutboundLink
           eventLabel="DEV Blog Visit"
